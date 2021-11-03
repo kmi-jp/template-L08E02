@@ -26,12 +26,18 @@ def test_series():
     assert isinstance(salaries.values, list)
     assert salaries.index == idx
 
-
-def test_from_csv(tmp_path):
+@pytest.mark.parametrize(
+    "separator",
+    [
+        ",",
+        ";"
+    ],
+)
+def test_from_csv(tmp_path, separator):
     csv_file = tmp_path / "test.csv"
-    csv_file.write_text(input_text)
+    csv_file.write_text(input_text.replace(",", separator))
 
-    data = Series.from_csv(csv_file)
+    data = Series.from_csv(csv_file, separator=separator)
 
     assert data.index.labels == user_labels
     assert list(data.values) == list(
