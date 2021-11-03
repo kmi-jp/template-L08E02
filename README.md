@@ -1,1 +1,9 @@
-# template-L08E02
+# L07E02: Data 3
+V balíčku `data` upravte metody `DataFrame.from_csv()` a `Series.from_csv()` tak, aby namísto textu přijímali instanci třídy `pathlib.Path` (tedy soubor s příponou `csv`).
+
+```python
+import pathlib
+from data.dataframe import DataFrame
+
+df = DataFrame.from_csv(pathlib.Path.cwd() / "input.csv")
+```
