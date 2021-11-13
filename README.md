@@ -1,4 +1,4 @@
-# L08E02: Data 3
+# L08E02: Data 4
 V balíčku `data` upravte metody `DataFrame.from_csv()` a `Series.from_csv()` tak, aby namísto textu přijímali instanci třídy `pathlib.Path` (tedy soubor s příponou `csv`).
 
 ```python
