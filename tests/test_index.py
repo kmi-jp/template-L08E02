@@ -22,7 +22,7 @@ def test_iter():
     idx = Index(labels=test_labels)
 
     assert isinstance(idx.__iter__(), types.GeneratorType)
-    
+
     assert [label for label in idx] == test_labels
 
 
@@ -45,14 +45,11 @@ def test_invalid_key():
 def test_label_duplicity():
     with pytest.raises(ValueError):
         Index(["key 1", "key 1", "key 3", "key 4", "key 5"])
-    
+
 
 @pytest.mark.parametrize(
     "function",
-    [
-        Index,
-        Index.get_loc
-    ],
+    [Index, Index.get_loc],
 )
 def test_docstrings(function):
     assert function.__doc__ is not None

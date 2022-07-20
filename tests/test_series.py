@@ -26,12 +26,10 @@ def test_series():
     assert isinstance(salaries.values, list)
     assert salaries.index == idx
 
+
 @pytest.mark.parametrize(
     "separator",
-    [
-        ",",
-        ";"
-    ],
+    [",", ";"],
 )
 def test_from_csv(tmp_path, separator):
     csv_file = tmp_path / "test.csv"
@@ -221,7 +219,7 @@ def test_round():
         Series.mean,
         Series.apply,
         Series.abs,
-        Series.items
+        Series.items,
     ],
 )
 def test_docstrings(function):

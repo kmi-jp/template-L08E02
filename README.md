@@ -7,3 +7,10 @@ from data.dataframe import DataFrame
 
 df = DataFrame.from_csv(pathlib.Path.cwd() / "input.csv")
 ```
+
+## Lokální testování
+Funkčnost řešení ověříte následujícím příkazem:
+
+```bash
+pytest
+```
