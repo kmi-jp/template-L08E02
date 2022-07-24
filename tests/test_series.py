@@ -1,6 +1,11 @@
 from data.series import Series
 
 
+@pytest.fixture
+def users_data():
+    return ["user 1", "user 2", "user 3", "user 4"]
+
+
 def test_from_csv(users_data, tmp_path):
     input_text = """user 1,user 2,user 3,user 4
 Lukas Novak,Petr Pavel,Pavel Petr,Ludek Skocil
