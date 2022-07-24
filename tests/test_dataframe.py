@@ -11,7 +11,7 @@ user 4,Ludek Skocil,50000,1100"""
     csv_file = tmp_path / "test.csv"
     csv_file.write_text(input_text)
 
-    data = DataFrame.from_csv(file=input_text)
+    data = DataFrame.from_csv(filepath=input_text)
 
     assert data.columns.labels == ["names", "salary", "cash flow"]
 
