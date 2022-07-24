@@ -8,7 +8,7 @@ Lukas Novak,Petr Pavel,Pavel Petr,Ludek Skocil
     csv_file = tmp_path / "test.csv"
     csv_file.write_text(input_text)
 
-    data = Series.from_csv(file=csv_file, separator=",")
+    data = Series.from_csv(filepath=csv_file, separator=",")
 
     assert data.index.labels == users_data
     assert list(data.values) == list(
